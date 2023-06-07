@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <form class="form">
+
+    <ion-list> 
+
+      <ion-item>
+        <ion-label color="dark" position="fixed"> Enter Country ID </ion-label>
+        <ion-input id="box" placeholder="*required field" type="number" [(ngModel)]="countryid" name="countryid"></ion-input>
+      </ion-item>  
+
+        <h4> Player Ages: </h4>
+
+      <ion-item>
+        <ion-label color="dark" position="fixed">Minimum</ion-label>
+        <ion-input id="box" placeholder="*optional field"type="number" [(ngModel)]="min_age"  name="min_age"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="dark" position="fixed">Maximum</ion-label>
+        <ion-input id="box" placeholder="*optional field" type="number" [(ngModel)]="max_age" name="max_age"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+        <br/>
+
+      <button (click)="save()" ion-button> SAVE </button>
+      <button (click)="eraseData()" ion-button> CANCEL </button>
+  </form>
+
+</ion-content>
+

@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      G00387928
+	        <br> 
+      <button>
+        <ion-icon (click)="openSettingsPage()" name="settings" ></ion-icon>
+      </button>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <div class="user"> 
+    <h4 [hidden]="hiddenText2"> {{text2}} {{username}} ! </h4>
+      <div [hidden]="hiddenContent">
+        <ion-item>  
+          <ion-label id="userlabel" stacked color="dark" position="fixed"> Your name: </ion-label>
+          <ion-input id="userinput" ype="text" [(ngModel)]="username" name="username"></ion-input>
+        </ion-item> 
+          <br>
+        <button (click)="userInfo()" color="secondary" ion-button round> Enter </button>
+      </div>
+  </div>
+
+    <hr>
+
+  <div class="quotes"> 
+    <h2> Quote from {{author}} about:</h2>
+      <ul> 
+        <li *ngFor= "let t of tags"> {{t}} </li>	
+      </ul>
+    <h3> {{content}} </h3>
+  </div>
+  
+    <hr>
+
+  <div class="players"> 
+
+    <h2 [hidden]="hiddenText1"> CountryID {{countryid}} {{name}} </h2> 
+    <h2 [hidden]="hiddenText"> CountryID {{countryid}} {{text}}</h2> 
+    
+    <img [hidden]="hiddenFlag" src="https://flagsapi.com/{{country_code}}/shiny/64.png">
+
+      <br>
+
+    <table [hidden]="hiddenTable" class="playersTable"> 
+      <tr>
+        <td> <b> First Name </b></td>
+        <td> <b> Surname </b> </td>
+        <td> <b> Age </b> </td>
+        <td> <b> Height </b></td>
+      </tr>
+      <tr *ngFor="let d of data" class="content-row">
+        <td> {{d.firstname}} </td>
+        <td> {{d.lastname}} </td>
+        <td> {{d.age}} </td>
+        <td> {{d.height}} </td>
+      </tr>
+    </table>
+  </div> 
+
+</ion-content>
